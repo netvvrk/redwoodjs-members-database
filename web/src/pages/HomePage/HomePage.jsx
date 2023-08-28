@@ -11,8 +11,6 @@ const HomePage = () => {
     <>
       <MetaTags title="Home" />
 
-      <h1>HomePage</h1>
-
       {hasRole("admin") && <AdminHome />}
       {hasRole("curator") && <CuratorHome />}
       {hasRole("member") && <MemberHome />}

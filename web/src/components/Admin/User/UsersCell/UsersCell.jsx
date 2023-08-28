@@ -9,14 +9,9 @@ export const QUERY = gql`
       name
       organization
       email
-      hashedPassword
-      salt
-      resetToken
-      resetTokenExpiresAt
       active
-      createdAt
-      updatedAt
       roles
+      createdAt
     }
   }
 `

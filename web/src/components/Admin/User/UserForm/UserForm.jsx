@@ -4,8 +4,8 @@ import {
   FieldError,
   Label,
   TextField,
-  DatetimeLocalField,
   CheckboxField,
+  SelectField,
   Submit,
 } from "@redwoodjs/forms"
 
@@ -84,76 +84,6 @@ const UserForm = (props) => {
         <FieldError name="email" className="rw-field-error" />
 
         <Label
-          name="hashedPassword"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Hashed password
-        </Label>
-
-        <TextField
-          name="hashedPassword"
-          defaultValue={props.user?.hashedPassword}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="hashedPassword" className="rw-field-error" />
-
-        <Label
-          name="salt"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Salt
-        </Label>
-
-        <TextField
-          name="salt"
-          defaultValue={props.user?.salt}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="salt" className="rw-field-error" />
-
-        <Label
-          name="resetToken"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Reset token
-        </Label>
-
-        <TextField
-          name="resetToken"
-          defaultValue={props.user?.resetToken}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-        />
-
-        <FieldError name="resetToken" className="rw-field-error" />
-
-        <Label
-          name="resetTokenExpiresAt"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Reset token expires at
-        </Label>
-
-        <DatetimeLocalField
-          name="resetTokenExpiresAt"
-          defaultValue={formatDatetime(props.user?.resetTokenExpiresAt)}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-        />
-
-        <FieldError name="resetTokenExpiresAt" className="rw-field-error" />
-
-        <Label
           name="active"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
@@ -175,16 +105,26 @@ const UserForm = (props) => {
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Roles
+          Role
         </Label>
 
-        <TextField
+        <SelectField
           name="roles"
           defaultValue={props.user?.roles}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
+          validation={{
+            required: true,
+            validate: {
+              matchesInitialValue: (value) => {
+                return value !== "Please select an option" || "Select an Option"
+              },
+            },
+          }}
+        >
+          <option>Please select an option</option>
+          <option>member</option>
+          <option>curator</option>
+          <option>admin</option>
+        </SelectField>
 
         <FieldError name="roles" className="rw-field-error" />
 

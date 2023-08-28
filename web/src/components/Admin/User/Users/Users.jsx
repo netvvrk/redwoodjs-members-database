@@ -43,14 +43,9 @@ const UsersList = ({ users }) => {
             <th>Name</th>
             <th>Organization</th>
             <th>Email</th>
-            <th>Hashed password</th>
-            <th>Salt</th>
-            <th>Reset token</th>
-            <th>Reset token expires at</th>
             <th>Active</th>
+            <th>Role</th>
             <th>Created at</th>
-            <th>Updated at</th>
-            <th>Roles</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -61,14 +56,9 @@ const UsersList = ({ users }) => {
               <td>{truncate(user.name)}</td>
               <td>{truncate(user.organization)}</td>
               <td>{truncate(user.email)}</td>
-              <td>{truncate(user.hashedPassword)}</td>
-              <td>{truncate(user.salt)}</td>
-              <td>{truncate(user.resetToken)}</td>
-              <td>{timeTag(user.resetTokenExpiresAt)}</td>
               <td>{checkboxInputTag(user.active)}</td>
-              <td>{timeTag(user.createdAt)}</td>
-              <td>{timeTag(user.updatedAt)}</td>
               <td>{truncate(user.roles)}</td>
+              <td>{timeTag(user.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

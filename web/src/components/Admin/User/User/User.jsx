@@ -56,36 +56,16 @@ const User = ({ user }) => {
               <td>{user.email}</td>
             </tr>
             <tr>
-              <th>Hashed password</th>
-              <td>{user.hashedPassword}</td>
-            </tr>
-            <tr>
-              <th>Salt</th>
-              <td>{user.salt}</td>
-            </tr>
-            <tr>
-              <th>Reset token</th>
-              <td>{user.resetToken}</td>
-            </tr>
-            <tr>
-              <th>Reset token expires at</th>
-              <td>{timeTag(user.resetTokenExpiresAt)}</td>
-            </tr>
-            <tr>
               <th>Active</th>
               <td>{checkboxInputTag(user.active)}</td>
             </tr>
             <tr>
+              <th>Role</th>
+              <td>{user.roles}</td>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(user.createdAt)}</td>
-            </tr>
-            <tr>
-              <th>Updated at</th>
-              <td>{timeTag(user.updatedAt)}</td>
-            </tr>
-            <tr>
-              <th>Roles</th>
-              <td>{user.roles}</td>
             </tr>
           </tbody>
         </table>
