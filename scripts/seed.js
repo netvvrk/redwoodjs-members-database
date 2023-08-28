@@ -24,28 +24,32 @@ export default async () => {
           name: "John",
           email: "john@a.com",
           password: "password1",
+          roles: "member",
         },
         {
           name: "Jane",
           email: "jane@a.com",
           password: "password2",
           organization: "MoMA",
+          roles: "curator",
         },
         {
           name: "Paddy",
           organization: "Netvvrk",
           email: "paddy@a.com",
           password: "password3",
+          roles: "admin",
         },
       ]
 
       users.map(async (user) => {
         const [hashedPassword, salt] = hashPassword(user.password)
-        const newUser = await db.user.create({
+        await db.user.create({
           data: {
             name: user.name,
             email: user.email,
             organization: user.organization,
+            roles: user.roles,
             hashedPassword,
             salt,
           },
