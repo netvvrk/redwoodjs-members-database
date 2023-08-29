@@ -45,6 +45,7 @@ const ArtworksList = ({ artworks }) => {
             <th>Price</th>
             <th>Visible</th>
             <th>Duration</th>
+            <th>Units</th>
             <th>Height</th>
             <th>Width</th>
             <th>Depth</th>
@@ -61,6 +62,7 @@ const ArtworksList = ({ artworks }) => {
               <td>{truncate(artwork.price)}</td>
               <td>{checkboxInputTag(artwork.public)}</td>
               <td>{truncate(artwork.duration)}</td>
+              <td>{truncate(artwork.units)}</td>
               <td>{truncate(artwork.sizeH)}</td>
               <td>{truncate(artwork.sizeW)}</td>
               <td>{truncate(artwork.sizeD)}</td>

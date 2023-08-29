@@ -7,6 +7,7 @@ import {
   NumberField,
   CheckboxField,
   Submit,
+  SelectField,
 } from "@redwoodjs/forms"
 
 const ArtworkForm = (props) => {
@@ -127,6 +128,21 @@ const ArtworkForm = (props) => {
         />
 
         <FieldError name="duration" className="rw-field-error" />
+
+        <Label
+          name="units"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Units
+        </Label>
+
+        <SelectField name="units" defaultValue={props.user?.units}>
+          <option>in</option>
+          <option>cm</option>
+        </SelectField>
+
+        <FieldError name="units" className="rw-field-error" />
 
         <Label
           name="sizeH"

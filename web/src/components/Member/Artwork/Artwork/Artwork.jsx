@@ -2,7 +2,7 @@ import { Link, routes, navigate } from "@redwoodjs/router"
 import { useMutation } from "@redwoodjs/web"
 import { toast } from "@redwoodjs/web/toast"
 
-import { checkboxInputTag, timeTag } from "src/lib/formatters"
+import { checkboxInputTag } from "src/lib/formatters"
 
 const DELETE_ARTWORK_MUTATION = gql`
   mutation DeleteArtworkMutation($id: Int!) {
@@ -66,6 +66,10 @@ const Artwork = ({ artwork }) => {
             <tr>
               <th>Duration</th>
               <td>{artwork.duration}</td>
+            </tr>
+            <tr>
+              <th>Units</th>
+              <td>{artwork.units}</td>
             </tr>
             <tr>
               <th>Height</th>

@@ -7,6 +7,7 @@ export const schema = gql`
     price: Int
     public: Boolean!
     duration: Int
+    units: String!
     sizeH: Float
     sizeW: Float
     sizeD: Float
@@ -28,8 +29,9 @@ export const schema = gql`
     medium: String!
     description: String
     price: Int
-    public: Boolean!
+    public: Boolean
     duration: Int
+    units: String!
     sizeH: Float
     sizeW: Float
     sizeD: Float
@@ -44,6 +46,7 @@ export const schema = gql`
     price: Int
     public: Boolean
     duration: Int
+    units: String!
     sizeH: Float
     sizeW: Float
     sizeD: Float

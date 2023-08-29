@@ -32,6 +32,7 @@ model Artwork {
   price       Int?
   public      Boolean
   duration    Int?
+  units       String   @default("in")
   sizeH       Float?
   sizeW       Float?
   sizeD       Float?

@@ -10,6 +10,7 @@ export const QUERY = gql`
       price
       public
       duration
+      units
       sizeH
       sizeW
       sizeD

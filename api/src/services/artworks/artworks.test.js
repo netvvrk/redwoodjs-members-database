@@ -34,7 +34,7 @@ describe("artworks", () => {
         public: true,
         location: "String",
         userId: scenario.artwork.two.userId,
-        updatedAt: "2023-08-28T22:23:05.205Z",
+        duration: 25,
       },
     })
 
@@ -43,14 +43,13 @@ describe("artworks", () => {
     expect(result.public).toEqual(true)
     expect(result.location).toEqual("String")
     expect(result.userId).toEqual(scenario.artwork.two.userId)
-    expect(result.updatedAt).toEqual(new Date("2023-08-28T22:23:05.205Z"))
   })
 
-  scenario("updates a artwork", async (scenario) => {
+  scenario("updates an artwork", async (scenario) => {
     const original = await artwork({ id: scenario.artwork.one.id })
     const result = await updateArtwork({
       id: original.id,
-      input: { title: "String2" },
+      input: { title: "String2", duration: 45 },
     })
 
     expect(result.title).toEqual("String2")
