@@ -21,4 +21,24 @@ model User {
   createdAt           DateTime  @default(now())
   updatedAt           DateTime  @updatedAt
   roles               String    @default("member")
+  artworks            Artwork[]
+}
+
+model Artwork {
+  id          Int      @id @default(autoincrement())
+  title       String
+  medium      String
+  description String?
+  price       Int?
+  public      Boolean
+  duration    Int?
+  sizeH       Float?
+  sizeW       Float?
+  sizeD       Float?
+  location    String
+  active      Boolean  @default(true)
+  userId      Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  User        User     @relation(fields: [userId], references: [id])
 }
